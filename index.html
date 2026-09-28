@@ -13,14 +13,16 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1040px;margin:0 auto;paddin
 .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.meta span{font-size:12px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);padding:6px 9px;border-radius:999px}
 .latest{margin-top:18px;background:white;border-radius:18px;padding:25px 27px;box-shadow:var(--shadow);border:1px solid var(--line)}
 .kicker{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.08em}.latest h2{font-size:24px;color:var(--navy);margin:5px 0 8px}.latest p{margin:0;color:#475467}
-.btn{display:inline-flex;margin-top:16px;padding:10px 16px;border-radius:10px;background:var(--navy);color:white;font-weight:650;font-size:14px}.btn:hover{background:var(--blue)}
+.btn{display:inline-flex;margin-top:16px;padding:10px 16px;border-radius:10px;background:var(--navy);color:white;font-weight:650;font-size:14px;border:0;cursor:pointer}.btn:hover{background:var(--blue)}
+.archive-picker{margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}.archive-picker h3{font-size:15px;margin:0 0 9px;color:var(--navy)}
+.picker-row{display:flex;gap:10px;align-items:center;max-width:560px}.picker-row select{flex:1;min-width:0;height:42px;border:1px solid #cfd8e6;border-radius:10px;background:white;padding:0 12px;font-size:14px;color:var(--ink);outline:none}.picker-row .btn{margin:0;height:42px;align-items:center}
 .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}.panel{background:white;border-radius:18px;padding:24px 26px;border:1px solid var(--line);box-shadow:var(--shadow)}
 .panel h2{font-size:19px;color:var(--navy);margin:0 0 13px}.timeline{border-left:2px solid #d8e6f7;margin-left:8px;padding-left:20px}.item{position:relative;padding:0 0 20px}.item:last-child{padding-bottom:0}.item:before{content:"";position:absolute;left:-27px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px var(--sky)}
 .date{font-size:12px;color:var(--muted)}.item h3{font-size:16px;margin:3px 0 4px;color:var(--navy)}.item p{font-size:13px;color:#475467;margin:0}.open{display:inline-block;margin-top:6px;color:var(--blue);font-size:13px;font-weight:700}
 .topic{display:grid;grid-template-columns:1fr 1fr;gap:9px}.chip{background:#f8fafc;border:1px solid var(--line);border-radius:10px;padding:10px 11px;font-size:13px}.chip b{display:block;color:var(--navy);margin-bottom:1px}
 .note{margin-top:16px;border-radius:12px;padding:13px 14px;background:#f8fbff;border:1px solid #dceafa;font-size:12.5px;color:#475467}
 .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:22px}
-@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding:30px 24px}.hero h1{font-size:27px}.topic{grid-template-columns:1fr}.wrap{padding:12px 10px 40px}}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{padding:30px 24px}.hero h1{font-size:27px}.topic{grid-template-columns:1fr}.wrap{padding:12px 10px 40px}.picker-row{display:grid;grid-template-columns:1fr}.picker-row .btn{justify-content:center}}
 </style>
 </head>
 <body>
@@ -35,8 +37,18 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1040px;margin:0 auto;paddin
 <section class="latest">
 <div class="kicker">最新一期 · 2026-09-26</div>
 <h2>AIOS 智能终端操作系统监测专报</h2>
-<p>承接 9 月 20 日基线判断，重点识别 9 月 21—26 日新增证据对既有判断的延续、强化与阶段跃迁。</p>
+<p>承接 9 月 20 日已经形成的历史判断，重点识别 9 月 21—26 日新增信息带来的延续、强化、修正与新变化。</p>
 <a class="btn" href="./reports/2026-09-26.html">查看最新专报 →</a>
+<div class="archive-picker">
+<h3>按日期查看历史专报</h3>
+<div class="picker-row">
+<select id="reportDate" aria-label="选择专报日期">
+<option value="./reports/2026-09-26.html">2026-09-26｜第11期</option>
+<option value="./reports/2026-09-20.html">2026-09-20｜第10期</option>
+</select>
+<button class="btn" type="button" onclick="location.href=document.getElementById('reportDate').value">打开所选专报</button>
+</div>
+</div>
 </section>
 
 <div class="grid">
@@ -46,13 +58,13 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1040px;margin:0 auto;paddin
 <div class="item">
 <div class="date">2026-09-26 · 第11期</div>
 <h3>连续研判更新</h3>
-<p>在 9/20 基线之上更新八方向变化，突出 Agentic OS、长期维护/合规与太空智算星座化等新增信号。</p>
+<p>延续 9/20 的历史判断，重点呈现 Agentic OS、长期维护与合规、超节点开放互联及太空智算星座化的新变化。</p>
 <a class="open" href="./reports/2026-09-26.html">打开本期</a>
 </div>
 <div class="item">
 <div class="date">2026-09-20 · 第10期</div>
-<h3>连续专报基线期</h3>
-<p>建立八方向监测基线，固定核心判断、关键数据、历史联系与后续持续验证指标。</p>
+<h3>阶段性研判更新</h3>
+<p>延续此前监测脉络，梳理八个方向当周新增变化，并形成可供后续专报持续承接的阶段性判断。</p>
 <a class="open" href="./reports/2026-09-20.html">打开本期</a>
 </div>
 </div>
@@ -70,7 +82,7 @@ a{text-decoration:none;color:inherit}.wrap{max-width:1040px;margin:0 auto;paddin
 <div class="chip"><b>具身智能</b>WAM / VLA</div>
 <div class="chip"><b>太空智算</b>在轨计算 / 星座</div>
 </div>
-<div class="note">本入口长期保持不变。后续新增专报只更新历史列表和最新一期，领导端二维码无需重新生成。</div>
+<div class="note">固定入口长期保持不变。以后新增一期，只需把新日期加入这里和历史列表，领导端二维码无需重新生成。</div>
 </aside>
 </div>
 <div class="footer">AIOS 专业领域情报监测专报 · 公开信息研判归档</div>
